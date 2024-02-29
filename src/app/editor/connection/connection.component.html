@@ -1,0 +1,8 @@
+<svg data-testid="connection" (pointerdown)="$event.stopPropagation()" (click)="data.click(data)">
+  <path class="hover-path" [attr.d]="path" />
+  <path #pathREf [attr.d]="path" [class]="{ selected: data.selected }" />
+</svg>
+<button *ngIf="data.selected" (pointerdown)="$event.stopPropagation()" (click)="data.remove(data)" [style]="{
+    left: point.x + 'px',
+    top: point.y + 'px',
+  }">X</button>
